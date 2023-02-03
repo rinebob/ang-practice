@@ -1,0 +1,38 @@
+
+
+.app-container { 
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .top-section {
+        align-items: center;
+        background-color: var(--top-bg-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 100px 0;
+
+        .title {
+            color: var(--title-text-color);
+            font: 700 120px/126px 'Kanit', sans-serif;
+            text-shadow: 0 1px 7px rgba(black, 0.1);
+        }
+        
+        .subtitle {
+            color: var(--subtitle-text-color);
+            font: 200 28px/36px 'Kanit', sans-serif;
+            text-shadow: 0 1px 4px rgba(black, 0.1);
+        }
+    }
+
+    .content-section {
+        background-color: var(--middle-bg-color);
+        flex-grow: 1;
+    }
+
+    .bottom-section {
+        background-color: var(--bottom-bg-color);
+    }
+}
