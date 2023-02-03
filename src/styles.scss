@@ -1,0 +1,28 @@
+
+// CSS reset
+// from https://jgthms.com/minireset.css/
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+// Kanit font
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;400;600;700&display=swap');
+
+:root {
+    --title-text-color: #f5f5f5;
+    --subtitle-text-color: white;
+    --top-bg-color: aquamarine;
+    --middle-bg-color: cadetblue;
+    --bottom-bg-color: orange;
+
+
+}
+
+html {
+    font-family: 'Kanit', sans-serif;
+    height: 100%;
+    
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+}
