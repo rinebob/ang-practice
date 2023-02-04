@@ -36,6 +36,8 @@
     .content-section {
         // background-color: var(--middle-bg-color);
         flex-grow: 1;
+        // needed for overflow-y behavior in component container
+        min-height: 0;
     }
 
     .bottom-section {

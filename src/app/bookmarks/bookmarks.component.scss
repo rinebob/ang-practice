@@ -2,25 +2,16 @@
 
 .bookmarks-container {
     height: 100%;
+    // needs min-height: 0 from app css .content-section
+    overflow-y: auto;
+    
     
     .tiles-container {
         display: flex;
         gap: 20px;
+        flex-wrap: wrap;
         justify-content: center;
-        
-        .bookmark-tile {
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(black, 0.5);
-            height: 100px;
-            width: 100px;
-
-            & img {
-                max-width: 32px;
-            }
-        }
+       
     }
 
 }
