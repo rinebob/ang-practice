@@ -44,10 +44,6 @@
             }
         }
 
-        &.selected {
-            // outline: none;
-        }
-
         &.selected .action-button {
             transform: translateY(-50%);
             transition-duration: 0.4s;
