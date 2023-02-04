@@ -1,0 +1,60 @@
+
+
+.action-buttons-container {
+    align-items: center;
+    background-color: rgba(white, 0.25);
+    backdrop-filter: blur(3px);
+    border-radius: 12px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin: 50px 12px 12px 12px;
+    padding: 10px;
+
+    .button-container {
+        position: relative;
+        
+        .action-button {
+            display: flex;
+            padding: 18px;
+            
+            &::before{
+                
+                border-radius: 10px;
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                // z-index: -1;
+
+                opacity: 0.9;
+                transition: all 0.2s;
+            }
+
+            &:hover::before {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+
+            i {
+                color: #222;
+                cursor: pointer;
+                position: relative;
+            }
+        }
+    }
+
+    .bookmark-tab .action-button::before {
+        background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+    }
+
+    .todo-tab .action-button::before {
+        background: linear-gradient(45deg, #a2ffff, #ffbdde);
+    }
+
+    .notes-tab .action-button::before {
+        background: linear-gradient(45deg, #d2cdff, #5fffbc);
+    }
+}
