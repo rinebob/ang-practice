@@ -1,1 +1,26 @@
-<router-outlet></router-outlet>
+
+<div class="app-container" data-test-id="app-container">
+
+  <div class="top-section" data-test-id="top-section">
+
+    <p class="title" data-test-id="title">
+      {{title}}
+    </p>
+    <p class="subtitle" data-test-id="subtitle">
+      {{subtitle}}
+    </p>
+
+  </div>
+
+  <div class="content-section" data-test-id="content-section">
+    <p>Content section</p>
+    <router-outlet></router-outlet>
+
+  </div>
+
+  <div class="bottom-section" data-test-id="bottom-section">
+    <p>Bottom section</p>
+  </div>
+
+</div>
+
