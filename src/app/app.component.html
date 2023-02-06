@@ -1,24 +1,24 @@
 
-<div class="app-container">
+<div class="app-container" data-test-id="app-container">
 
-  <div class="top-section">
+  <div class="top-section" data-test-id="top-section">
 
-    <p class="title">
-      11:11
+    <p class="title" data-test-id="title">
+      {{title}}
     </p>
-    <p class="subtitle">
-      2 February 2023
+    <p class="subtitle" data-test-id="subtitle">
+      {{subtitle}}
     </p>
 
   </div>
 
-  <div class="content-section">
+  <div class="content-section" data-test-id="content-section">
     <p>Content section</p>
     <router-outlet></router-outlet>
 
   </div>
 
-  <div class="bottom-section">
+  <div class="bottom-section" data-test-id="bottom-section">
     <p>Bottom section</p>
   </div>
 

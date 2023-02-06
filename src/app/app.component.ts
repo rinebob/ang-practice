@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ang-practice';
+  title = '11:11';
+  subtitle = '2 February 2023'
 }
