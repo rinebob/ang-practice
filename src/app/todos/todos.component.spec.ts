@@ -5,7 +5,7 @@ import { TodosHarness } from './testing/todos-harness';
 
 import { TodosComponent } from './todos.component';
 
-fdescribe('TodosComponent', () => {
+describe('TodosComponent', () => {
   let component: TodosComponent;
   let fixture: ComponentFixture<TodosComponent>;
   let loader: HarnessLoader;
@@ -24,7 +24,10 @@ fdescribe('TodosComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created and have todos', async () => {
+    const todos = await harness.getTodos();
+    
     expect(component).toBeTruthy();
+    expect(todos.length).toBe(2);
   });
 });

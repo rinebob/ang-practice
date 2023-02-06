@@ -5,7 +5,7 @@ import { NotesHarness } from './testing/notes-harness';
 
 import { NotesComponent } from './notes.component';
 
-fdescribe('NotesComponent', () => {
+describe('NotesComponent', () => {
   let component: NotesComponent;
   let fixture: ComponentFixture<NotesComponent>;
   let loader: HarnessLoader;
@@ -24,7 +24,10 @@ fdescribe('NotesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created and have notes', async () => {
+    const notes = await harness.getNotes();
+    
     expect(component).toBeTruthy();
+    expect(notes.length).toBe(2);
   });
 });

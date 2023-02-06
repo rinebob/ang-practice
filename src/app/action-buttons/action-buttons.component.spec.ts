@@ -6,7 +6,7 @@ import { ActionButtonsHarness } from './testing/action-buttons-harness';
 
 import { ActionButtonsComponent } from './action-buttons.component';
 
-fdescribe('ActionButtonsComponent', () => {
+describe('ActionButtonsComponent', () => {
   let component: ActionButtonsComponent;
   let fixture: ComponentFixture<ActionButtonsComponent>;
   let loader: HarnessLoader;
@@ -25,7 +25,12 @@ fdescribe('ActionButtonsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create and have action buttons', async () => {
+
+    const bookmarksButton = await harness.getElement('bookmarks-button');
+
+
     expect(component).toBeTruthy();
+    expect(bookmarksButton).toBeTruthy();
   });
 });

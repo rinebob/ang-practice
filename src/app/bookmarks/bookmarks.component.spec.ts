@@ -3,9 +3,10 @@ import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { BookmarksHarness } from './testing/bookmarks-harness';
 
+import { AppModule } from '../app.module';
 import { BookmarksComponent } from './bookmarks.component';
 
-fdescribe('BookmarksComponent', () => {
+describe('BookmarksComponent', () => {
   let component: BookmarksComponent;
   let fixture: ComponentFixture<BookmarksComponent>;
   let loader: HarnessLoader;
@@ -13,7 +14,8 @@ fdescribe('BookmarksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BookmarksComponent ]
+      imports: [AppModule],
+      declarations: [ BookmarksComponent ],
     })
     .compileComponents();
 
@@ -24,7 +26,10 @@ fdescribe('BookmarksComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created and have bookmarks', async () => {
+    const bookmarks = await harness.getBookmarkTiles();
+    
     expect(component).toBeTruthy();
+    expect(bookmarks.length).toBe(39);
   });
 });
