@@ -6,9 +6,12 @@
 // Kanit font
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;400;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Material+Icons+Outlined');
 :root {
-    --title-text-color: #f5f5f5;
+    // --title-text-color: #f5f5f5;
+    --title-text-color: rgb(56, 85, 81);
     --subtitle-text-color: white;
+    --app-bg-color: ;
     --top-bg-color: aquamarine;
     --middle-bg-color: cadetblue;
     --bottom-bg-color: orange;

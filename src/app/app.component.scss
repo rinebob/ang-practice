@@ -1,14 +1,20 @@
 
 
 .app-container { 
-
+    background-image: url('../assets/portugal_facts2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     height: 100%;
 
+
+
     .top-section {
         align-items: center;
-        background-color: var(--top-bg-color);
+        // background-color: var(--top-bg-color);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -21,18 +27,23 @@
         }
         
         .subtitle {
-            color: var(--subtitle-text-color);
-            font: 200 28px/36px 'Kanit', sans-serif;
+            color: var(--title-text-color);
+            font: 400 36px/36px 'Kanit', sans-serif;
             text-shadow: 0 1px 4px rgba(black, 0.1);
         }
     }
 
     .content-section {
-        background-color: var(--middle-bg-color);
+        // background-color: var(--middle-bg-color);
         flex-grow: 1;
     }
 
     .bottom-section {
-        background-color: var(--bottom-bg-color);
+        // background-color: var(--bottom-bg-color);
+        display: flex;
+
+        rb-action-buttons {
+            margin: auto;
+        }
     }
 }

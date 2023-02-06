@@ -1,15 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HarnessLoader } from '@angular/cdk/testing';
-import {TestbedHarnessEnvironment} from '@angular/cdk/testing/testbed';
+import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { AppHarness } from './testing/app-harness';
 
 describe('AppComponent', () => {
-  let loader: HarnessLoader;
   let fixture: ComponentFixture<AppComponent>;
   let component: AppComponent;
+  let loader: HarnessLoader;
   let harness: AppHarness;
 
   beforeEach(async () => {
