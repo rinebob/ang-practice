@@ -1,0 +1,17 @@
+
+
+.bookmarks-container {
+    height: 100%;
+    // needs min-height: 0 from app css .content-section
+    overflow-y: auto;
+    
+    
+    .tiles-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+       
+    }
+
+}
