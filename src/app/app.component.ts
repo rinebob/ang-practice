@@ -133,4 +133,8 @@ export class AppComponent {
       return '';
     }
   }
+
+title = '11:11';
+  subtitle = '2 February 2023'
+
 }

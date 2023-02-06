@@ -11,12 +11,12 @@
     margin: 50px 12px 12px 12px;
     padding: 10px;
 
-    .button-container {
+    .action-button {
         outline: none; 
         position: relative;
         text-decoration: none;
         
-        .action-button {
+        .action-button-front {
             display: flex;
             padding: 18px;
             transition: all 0.2s ease-out;
@@ -44,13 +44,17 @@
             }
         }
 
-        &.selected .action-button {
+        &.selected {
+            // outline: none;
+        }
+
+        &.selected .action-button-front {
             transform: translateY(-50%);
             transition-duration: 0.4s;
             transition-timing-function: cubic-bezier(0, 0, 0, 2);
         }
 
-        &.selected .action-button::before {
+        &.selected .action-button-front::before {
             border-radius: 50%;
             box-shadow: 0px 7px 17px rgba(black, 0.12);
             opacity: 1;
@@ -88,15 +92,15 @@
         
     }
 
-    .bookmark-tab .action-button::before {
+    .bookmarks-button .action-button-front::before {
         background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
     }
 
-    .todo-tab .action-button::before {
+    .todo-button .action-button-front::before {
         background: linear-gradient(45deg, #a2ffff, #ffbdde);
     }
 
-    .notes-tab .action-button::before {
+    .notes-button .action-button-front::before {
         background: linear-gradient(45deg, #d2cdff, #5fffbc);
     }
 }
