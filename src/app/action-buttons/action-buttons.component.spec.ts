@@ -26,5 +26,6 @@ fdescribe('ActionButtonsComponent', () => {
   });
 
   it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });
