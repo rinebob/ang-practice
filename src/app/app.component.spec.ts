@@ -47,5 +47,4 @@ describe('AppComponent', () => {
     expect(contentSection).toBeTruthy();
     expect(bottomSection).toBeTruthy();
   });
-
 });
