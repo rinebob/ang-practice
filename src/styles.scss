@@ -8,9 +8,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Material+Icons+Outlined');
 :root {
-    // --title-text-color: #f5f5f5;
+    --title-font-family: 'Kanit', sans-serif;
+    --text-font-family: 'Kanit', sans-serif;
+    
     --title-text-color: rgb(56, 85, 81);
     --subtitle-text-color: white;
+    --regular-text-color: #222;
     --app-bg-color: ;
     --top-bg-color: aquamarine;
     --middle-bg-color: cadetblue;
@@ -20,7 +23,8 @@
 }
 
 html {
-    font-family: 'Kanit', sans-serif;
+    color: var(--regular-text-color);
+    font-family: var(--title-font-family);
     height: 100%;
     
     body {
@@ -35,3 +39,47 @@ html {
     max-width: 850px;
     margin: auto;
 }
+
+.buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    
+    &.centered {
+        justify-content: center;
+        
+    }
+    
+    &.justify-right {
+        justify-content: flex-end;
+
+    }
+
+    .app-button {
+        align-items: center;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-flex;
+        padding: 12px 22px;
+        background: rgba(black, 0.7);
+        color: white;
+        font-family: var(--text-font-family);
+        font-size: 18px;
+        text-decoration: none;
+    
+        p {
+            margin: 0 6px;
+        }
+    
+        &:hover {
+            background: rgba(black, 0.78);
+            backdrop-filter: blur(2px);
+        }
+        
+        &:active {
+            background: rgba(black, 0.85);
+        }
+    }
+}
+

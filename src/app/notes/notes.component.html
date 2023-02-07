@@ -6,7 +6,7 @@
 
         <div class="notes-list">
 
-            <div class="note-card">
+            <div class="note-card" data-test-id="note-card">
 
                 <div class="note-card-title">
                     Note Title
@@ -18,7 +18,29 @@
                 </div>
             
             </div>
+
+            <div class="note-card" data-test-id="note-card">
+
+                <div class="note-card-title">
+                    Note Title 2
+
+                </div>
+                
+                <div class="note-card-content">
+                    wow note content 2 dude!
+                </div>
+            
+            </div>
         
+        </div>
+
+        <div class="buttons-container centered">
+
+            <a routerLink="/notes/add" class="app-button" data-test-id="add-button">
+                <i class="material-icons-outlined">add</i>
+                <p>Add</p>
+            </a>
+            
         </div>
     
     </div>

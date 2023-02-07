@@ -1,0 +1,38 @@
+
+<div class="add-note-container content-container has-blurred-white-bg" data-test-id="note-card">
+    <p class="title">New Note</p>
+    
+    <form data-test-id="note-form">
+        
+        <input type="text"
+               placeholder="Enter note title..."
+               class="title-input"
+               data-test-id="title-input"
+        >
+
+        <textarea class="text-area"
+                  placeholder="Enter note content..."
+                  data-test-id="note-textarea"
+        >
+        </textarea>
+
+        <div class="buttons-container justify-right">
+            
+            <a routerLink="../"
+               class="app-button"
+               data-test-id="cancel-button"
+            >
+                Cancel
+            </a>
+
+            <button class="app-button"
+                    data-test-id="create-button"
+            >
+                Create note
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
