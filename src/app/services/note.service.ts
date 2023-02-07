@@ -10,7 +10,9 @@ export class NoteService {
 
   notesBS = new BehaviorSubject<Note[]>([]);
 
-  constructor() { }
+  constructor() {
+    this.setNotes([...MOCK_NOTES]);
+   }
 
   setNotes(notes: Note[]) {
     console.log('nS sN notes: ', [...notes])

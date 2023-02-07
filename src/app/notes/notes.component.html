@@ -6,32 +6,14 @@
 
         <div class="notes-list">
 
-            <div class="note-card" data-test-id="note-card">
+            <ng-container *ngFor="let note of notes$ | async">
 
-                <div class="note-card-title">
-                    Note Title
+                <rb-note-card [note]="note"
+                              (selectedNote)="handleSelectedNote($event)"
+                ></rb-note-card>
 
-                </div>
-                
-                <div class="note-card-content">
-                    note content dude!
-                </div>
-            
-            </div>
+            </ng-container>
 
-            <div class="note-card" data-test-id="note-card">
-
-                <div class="note-card-title">
-                    Note Title 2
-
-                </div>
-                
-                <div class="note-card-content">
-                    wow note content 2 dude!
-                </div>
-            
-            </div>
-        
         </div>
 
         <div class="buttons-container centered">
