@@ -24,10 +24,12 @@ describe('NotesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created and have notes', async () => {
+  it('should be created and have all elements', async () => {
     const notes = await harness.getNotes();
+    const addButton = await harness.getElement('add-button');
     
     expect(component).toBeTruthy();
+    expect(addButton).toBeTruthy();
     expect(notes.length).toBe(2);
   });
 });

@@ -1,16 +1,16 @@
 import { BaseHarnessFilters, ComponentHarness, HarnessPredicate, TestElement } from '@angular/cdk/testing';
 
-export class NotesHarness extends ComponentHarness {
-    static hostSelector = 'rb-notes';
+export class AddNoteHarness extends ComponentHarness {
+    static hostSelector = 'rb-add-note';
 
-    notes = this.locatorForAll('[data-test-id="note-card"]');
+    note = this.locatorFor('[data-test-id="note-card"]');
 
-    static with(options: BaseHarnessFilters): HarnessPredicate<NotesHarness> {
-        return new HarnessPredicate(NotesHarness, options);
+    static with(options: BaseHarnessFilters): HarnessPredicate<AddNoteHarness> {
+        return new HarnessPredicate(AddNoteHarness, options);
     };
 
-    async getNotes(): Promise<TestElement[]> {
-        return await this.notes();
+    async getNote(): Promise<TestElement> {
+        return await this.note();
     }
 
     async getElement(selector: string): Promise<TestElement> {
