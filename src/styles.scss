@@ -43,8 +43,7 @@ html {
 .buttons-container {
     display: flex;
     gap: 10px;
-    margin-top: 10px;
-    
+        
     &.centered {
         justify-content: center;
         
@@ -73,10 +72,20 @@ html {
         }
     
         &:hover {
-            background: rgba(black, 0.78);
             backdrop-filter: blur(2px);
+
+            &:not(.disabled) {
+                background: rgba(black, 0.78);
+
+            }
         }
         
+        &.disabled {
+            background-color: rgba(black, 0.5);
+            color: rgba(white, 0.5);
+            cursor: default;
+        }
+
         &:active {
             background: rgba(black, 0.85);
         }
