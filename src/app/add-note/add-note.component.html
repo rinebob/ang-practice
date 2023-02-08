@@ -1,31 +1,65 @@
 
 <div class="add-note-container content-container has-blurred-white-bg" data-test-id="note-card">
+    
     <p class="heading">New Note</p>
     
     <form [formGroup]="noteForm" data-test-id="note-form" (ngSubmit)="handleFormSubmit()">
         
-        <input type="text"
-               placeholder="Enter note title..."
-               class="title-input"
-               data-test-id="title-input"
-               formControlName="titleControl"
-        >
+        <div class="form-field validation-field">
+            
+            <input type="text"
+                   placeholder="Enter note title..."
+                   class="title-input"
+                   data-test-id="title-input"
+                   formControlName="titleControl"
+                   required
+            >
+    
+            <ng-container *ngIf="noteForm.invalid && !titleControl.value && (titleControl.dirty || titleControl.touched)">
+                
+                <p class="error" *ngIf="titleControl.errors?.['required']">Please enter a note title</p>
 
+            </ng-container>
+
+        </div>
+
+        <div class="validation-field text-area-container">
+   
             <!-- placeholder doesn't appear if textarea tag occupies more than one line -->
-        <textarea class="text-area" placeholder="Enter note content..." data-test-id="note-textarea" formControlName="contentControl"></textarea>
+            <textarea class="text-area" placeholder="Enter note content..." data-test-id="content-textarea" formControlName="contentControl" required></textarea>
+            
+            <ng-container *ngIf="noteForm.invalid">
+
+                <ng-container *ngIf="!contentControl.value && (contentControl.touched); else hint">
+
+                    <p class="error" *ngIf="contentControl.errors?.['required']">Please add note content</p>
+    
+                </ng-container>
+
+                <ng-template #hint>
+
+                    <p class="hint" >All fields are required</p>
+
+                </ng-template>
+
+            </ng-container>
+
+        </div>
 
         <div class="buttons-container justify-right">
             
-            <a routerLink="../"
-               class="app-button"
-               data-test-id="cancel-button"
+            <button class="app-button"
+                    data-test-id="cancel-button"
+                    (click)="handleCancel()"
             >
                 Cancel
-            </a>
+            </button>
 
             <button class="app-button"
-                    data-test-id="create-button"
                     type="submit"
+                    [disabled]="noteForm.invalid"
+                    [class.disabled]="noteForm.invalid"
+                    data-test-id="create-button"
             >
                 Create note
             </button>
@@ -33,5 +67,10 @@
         </div>
 
     </form>
+
+    <!-- <p>Form Status: {{ noteForm.status }}</p>
+    <p>Form errors: {{ noteForm.errors }}</p>
+    <p>title errors: {{ titleControl.errors }}</p>
+    <p>content errors: {{ contentControl.errors }}</p> -->
 
 </div>
