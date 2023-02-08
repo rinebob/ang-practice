@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 
 import { Note } from '../common/interfaces';
 import { NOTE_INITIALIZER } from '../common/constants';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'rb-note-card',
@@ -11,9 +12,15 @@ import { NOTE_INITIALIZER } from '../common/constants';
 })
 export class NoteCardComponent {
 
-  @Input() note: Note = NOTE_INITIALIZER;
+  @Input()
+  set note(note: Note) {
+    this.noteBS.next(note);
+  }
+  get note() {
+    return this.noteBS.value;
+  }
+  noteBS = new BehaviorSubject<Note>(NOTE_INITIALIZER);
 
-  // id of the note that gets clicked on
   @Output() selectedNote = new EventEmitter<Note>();
 
   handleNoteSelection(note: Note) {

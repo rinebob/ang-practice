@@ -2,16 +2,17 @@
 <div class="add-note-container content-container has-blurred-white-bg" data-test-id="note-card">
     <p class="heading">New Note</p>
     
-    <form data-test-id="note-form">
+    <form [formGroup]="noteForm" data-test-id="note-form" (ngSubmit)="handleFormSubmit()">
         
         <input type="text"
                placeholder="Enter note title..."
                class="title-input"
                data-test-id="title-input"
+               formControlName="titleControl"
         >
 
             <!-- placeholder doesn't appear if textarea tag occupies more than one line -->
-        <textarea class="text-area" placeholder="Enter note content..." data-test-id="note-textarea"></textarea>
+        <textarea class="text-area" placeholder="Enter note content..." data-test-id="note-textarea" formControlName="contentControl"></textarea>
 
         <div class="buttons-container justify-right">
             
@@ -24,6 +25,7 @@
 
             <button class="app-button"
                     data-test-id="create-button"
+                    type="submit"
             >
                 Create note
             </button>

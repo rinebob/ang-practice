@@ -8,7 +8,7 @@
         {{note.title}}
     </div>
     
-    <div class="note-card-content" data-test-id="note-card-content">
+    <div class="note-card-content" data-test-id="note-card-content" *ngIf="!!note.content">
         {{note.content}}
     </div>
 

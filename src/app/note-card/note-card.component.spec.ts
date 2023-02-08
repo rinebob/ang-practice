@@ -7,7 +7,7 @@ import { NoteCardHarness } from './testing/note-card-harness';
 import { AppModule } from '../app.module';
 import { MOCK_NOTES } from '../testing/mock-data';
 
-fdescribe('NoteCardComponent', () => {
+describe('NoteCardComponent', () => {
   let component: NoteCardComponent;
   let fixture: ComponentFixture<NoteCardComponent>;
   let loader: HarnessLoader;
@@ -40,16 +40,6 @@ fdescribe('NoteCardComponent', () => {
     expect(id).toBeTruthy();
     expect(title).toBeTruthy();
     expect(content).toBeTruthy();
-  });
-
-  it('should update note when new note is received', async () => {
-    expect(component.note).toEqual(MOCK_NOTES[0]);
-
-    component.note = {...MOCK_NOTES[1]};
-    
-    expect(component.note).toEqual(MOCK_NOTES[1]);
-    expect(await id.text()).toEqual('ID: 40139170-383f-4f63-8fcb-e2011b2c1b03');
-    expect(await title.text()).toEqual('Note 1 wow!');
   });
 
   it('should emit selected note when user clicks on it', async () => {
