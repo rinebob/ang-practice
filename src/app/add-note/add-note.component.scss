@@ -17,8 +17,20 @@
         margin-bottom: 25px;
     }
 
-    .title-input {
-        margin-bottom: 20px;
+    .form-field {
+        min-height: 72px;
+    }
+
+    .validation-field {
+        .hint {
+            color: rgba(black, 0.5);
+            font-size: 12px;
+        }
+        
+        .error {
+            color: red;
+            font-size: 12px;
+        }
     }
     
     .title-input, .text-area {
@@ -41,12 +53,17 @@
         &:hover, &:focus {
             border-color: rgba(black, 0.42);
         }
-    
     }
 
-    .text-area {
-        resize: vertical;
-        min-height: 100px;
+    .text-area-container {
+        min-height: 130px;
+        
+        .text-area {
+            resize: vertical;
+            min-height: 100px;
+        }
+
     }
+
 }
 

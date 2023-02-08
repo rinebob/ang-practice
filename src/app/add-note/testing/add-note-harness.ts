@@ -4,6 +4,11 @@ export class AddNoteHarness extends ComponentHarness {
     static hostSelector = 'rb-add-note';
 
     note = this.locatorFor('[data-test-id="note-card"]');
+    form = this.locatorFor('[data-test-id="note-form"]');
+    title = this.locatorFor(`[data-test-id="title-input"]`);
+    content = this.locatorFor(`[data-test-id="content-textarea"]`);
+    createButton = this.locatorFor('[data-test-id="create-button"]');
+    cancelButton = this.locatorFor('[data-test-id="cancel-button"]');
 
     static with(options: BaseHarnessFilters): HarnessPredicate<AddNoteHarness> {
         return new HarnessPredicate(AddNoteHarness, options);
@@ -13,11 +18,23 @@ export class AddNoteHarness extends ComponentHarness {
         return await this.note();
     }
 
-    async getElement(selector: string): Promise<TestElement> {
-        return await this.locatorFor(`[data-test-id="${selector}"]`)();
+    async getForm(): Promise<TestElement> {
+        return await this.form();
     }
 
-    async getElements(selector: string): Promise<TestElement[]> {
-        return await this.locatorForAll(`[data-test-id="${selector}"]`)();
+    async getTitle(): Promise<TestElement> {
+        return await this.title();
+    }
+
+    async getContent(): Promise<TestElement> {
+        return await this.content();
+    }
+
+    async getCreateButton(): Promise<TestElement> {
+        return await this.createButton();
+    }
+
+    async getCancelButton(): Promise<TestElement> {
+        return await this.cancelButton();
     }
 }

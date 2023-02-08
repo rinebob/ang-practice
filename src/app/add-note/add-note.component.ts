@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormControl, FormGroup, } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Note } from '../common/interfaces';
 import { NoteService } from '../services/note.service';
 
 @Component({
@@ -11,22 +10,25 @@ import { NoteService } from '../services/note.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddNoteComponent {
-
-  titleControl = new FormControl('');
-  contentControl = new FormControl('');
+  titleControl = new FormControl('', Validators.required);
+  contentControl = new FormControl('', Validators.required);
   noteForm = new FormGroup({
     'titleControl': this.titleControl,
     'contentControl': this.contentControl,
   });
 
-  constructor(private noteService: NoteService, private router: Router) {}
+  constructor(private noteService: NoteService, readonly router: Router) {}
 
   handleFormSubmit() {
-    console.log('aN hFS form: ', this.noteForm);
-    console.log('aN hFS value: ', this.noteForm.value);
-    const note = new Note(this.noteForm.value.titleControl ?? '', this.noteForm.value.contentControl ?? '')
-
+    const note = {
+      title: this.noteForm.value.titleControl ?? '',
+      content: this.noteForm.value.contentControl ?? '',
+    };
     this.noteService.createNote(note);
+    this.router.navigateByUrl('/notes');
+  }
+
+  handleCancel() {
     this.router.navigateByUrl('/notes');
   }
 
