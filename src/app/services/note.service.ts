@@ -10,10 +10,12 @@ export class NoteService {
 
   notesBS = new BehaviorSubject<Note[]>([]);
 
-  constructor() { }
+  constructor() {
+    this.setNotes([...MOCK_NOTES]);
+   }
 
   setNotes(notes: Note[]) {
-    console.log('nS sN notes: ', [...notes])
+    // console.log('nS sN notes: ', [...notes])
     this.notesBS.next([...notes]);
   }
 
@@ -23,7 +25,7 @@ export class NoteService {
 
   getNote(id: string): Note | undefined {
     const note = this.notesBS.value.find(note => note.id === id)
-    console.log('n gN id/note: ', id, note);
+    // console.log('n gN id/note: ', id, note);
     return this.notesBS.value.find(note => note.id === id);
   }
 
@@ -44,13 +46,14 @@ export class NoteService {
 
   deleteNote(id: string): string {
     const noteIndex = this.notesBS.value.findIndex(note => note.id === id);
-    console.log('nS dN id/index: ', id, noteIndex);
+    // console.log('nS dN id/index: ', id, noteIndex);
     if (noteIndex !== -1) {
+      // performs the delete operation
       const deletedNotes = this.notesBS.value.splice(noteIndex, 1);
-      console.log('nS dN deleted notes: ', deletedNotes);
-      console.log('nS dN remaining notes: ', this.notesBS.value);
-      
-      console.log('nS dN final notesBS: ', this.notesBS.value);
+
+      // console.log('nS dN deleted notes: ', deletedNotes);
+      // console.log('nS dN remaining notes: ', this.notesBS.value);
+      // console.log('nS dN final notesBS: ', this.notesBS.value);
 
       return `Deleted note with id: ${id}`;
 
